@@ -16,8 +16,8 @@ Docker / www.docker.com
 
 1.  Edit conf/logstash.conf and change the pfSense IP to the IP address of your pfSense firewall, and set the timezone to the appropriate setting.
 
-2.  Build the Docker image (From within the northshore/elk directory where the Dockerfile lives)
-	sudo docker build -t northshore/elk .
+2.  Build the Docker image (From within the northshorenetworks/elk directory where the Dockerfile lives)
+	sudo docker build -t northshorenetworks/elk .
 	
 3.  Run the Docker Image (Modify names/port mappings to suit your needs)
     sudo docker run -d -v <path to northshore/elk>/conf:/conf --name="northshore-elk" -p 80:80 -p 5140:5140/udp -p 9200:9200 northshorenetworks/elk /elk_start.sh
