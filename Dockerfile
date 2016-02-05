@@ -67,3 +67,7 @@ RUN touch elk_start.sh && \
    echo 'exec /logstash/bin/logstash agent -f /conf/logstash.conf' >> elk_start.sh && \
    chmod 777 elk_start.sh
 
+# Download GeoIP Data
+RUN mkdir -p /usr/share/GeoIP/ && \
+   curl "http://geolite.maxmind.com/download/geoip/database/GeoLiteCity.dat.gz" >> /usr/share/GeoIP/GeoLiteCity.dat.gz && \
+   gunzip /usr/share/GeoIP/GeoLiteCity.dat.gz
